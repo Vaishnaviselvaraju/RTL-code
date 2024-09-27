@@ -1,0 +1,63 @@
+module mux_tb();
+
+	// Inputs
+	reg a;
+	reg b;
+	reg c;
+	reg d;
+	reg e;
+	reg f;
+	reg g;
+	reg h;
+	reg [2:0] sel;
+
+	// Outputs
+	wire out;
+	integer i,j;
+
+	// Instantiate the Unit Under Test (UUT)
+	mux uut (
+		.a(a), 
+		.b(b), 
+		.c(c), 
+		.d(d), 
+		.e(e), 
+		.f(f), 
+		.g(g), 
+		.h(h), 
+		.sel(sel), 
+		.out(out)
+	);
+
+	initial begin
+		// Initialize Inputs
+		a = 0;
+		b = 0;
+		c = 0;
+		d = 0;
+		e = 0;
+		f = 0;
+		g = 0;
+		h = 0;
+		sel = 0;
+		
+		end
+        
+		// Add stimulus here
+    initial 
+	   
+	    begin
+		   for(i=0;i<8;i=i+1)
+				begin
+				 sel = i;
+					for(j=0;j<64;j=j+1)
+						begin
+							{a,b,c,d,e,f,g,h} = j;
+				    		#5;
+				      end
+				#20;
+			   end			
+		end
+		
+endmodule
+
