@@ -1,0 +1,34 @@
+module decoder_tb;
+
+	// Inputs
+	reg [1:0] a;
+	integer i;
+
+	// Outputs
+	wire [3:0] out;
+
+	// Instantiate the Unit Under Test (UUT)
+	decoder uut (
+		.a(a), 
+		.out(out)
+	);
+	initial begin
+	    a=4'd2;
+		 end
+
+	initial begin
+		// Initialize Inputs
+		for(i=0;i<16;i=i+1)
+		   begin
+			a=i;
+			#10;
+			end
+			#10;
+			
+      
+		// Add stimulus here
+
+	end
+      
+endmodule
+
