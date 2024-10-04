@@ -1,0 +1,26 @@
+module encoder_tb();
+    reg[3:0]D;
+	 wire[1:0]Y;
+	
+	integer i;
+	encoder uut (.D(D),.Y(Y));
+
+initial 
+begin
+  D=4'd2;
+end
+
+initial 
+begin
+ for(i=0;i<16;i=i+1)
+	begin
+	  D=i;
+	  #20;
+	end
+#10;
+end
+	initial
+	begin
+	$monitor("value of D=%b,Y=%b",D,Y);
+	end
+endmodule
