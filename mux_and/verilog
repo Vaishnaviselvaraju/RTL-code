@@ -1,0 +1,10 @@
+module mux_and(a,b,sel,y);
+input a,b;
+input sel;
+output reg y;
+always @(*)
+   if(sel==0)
+      y=a;
+	else
+	    y=b;
+endmodule
